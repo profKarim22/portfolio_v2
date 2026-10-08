@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Karim Abbas Elashiry — Backend Developer & Computer Science Senior specializing in Node.js, Express.js, TypeScript, RESTful APIs, MySQL, MongoDB, SQL & NoSQL databases. Explore verified projects and technical architecture."
+    />
+    <meta name="author" content="Karim Abbas Elashiry" />
+    <meta
+      name="keywords"
+      content="Backend Developer, Computer Science Senior, Node.js, Express.js, TypeScript, MySQL, MongoDB, SQL, NoSQL, RESTful APIs, JWT, Mongoose, Flutter, Portfolio"
+    />
+    <meta property="og:title" content="Karim Abbas Elashiry — Backend Developer & Computer Science Senior" />
+    <meta
+      property="og:description"
+      content="Backend Developer & Computer Science Senior specializing in Node.js, Express.js, TypeScript, RESTful APIs, MySQL, MongoDB, and scalable backend systems."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://profkarim22.github.io/portfolio/" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500;600;700&family=Geist+Mono:wght@400;500;600;700&family=Geist:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Theme color & GitHub Pages SPA redirect handler -->
+    <script type="text/javascript">
+      try {
+        // Dark mode is the default; light only when the visitor explicitly chose it
+        var savedTheme = null;
+        try { savedTheme = localStorage.getItem("theme"); } catch (e) {}
+        var useDark = savedTheme !== "light";
+        document.documentElement.classList.toggle("dark", useDark);
+        var meta = document.createElement("meta");
+        meta.name = "theme-color";
+        meta.content = useDark ? "#120f19" : "#f5ebff";
+        document.head.appendChild(meta);
+      } catch (e) {
+        document.documentElement.classList.add("dark");
+      }
+
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })(window.location);
+    </script>
+
+    <style>
+      /* Prevent flash of unstyled content */
+      html, body {
+        background: hsl(269, 100%, 95%);
+        color: hsl(0, 0%, 3.9%);
+        margin: 0;
+        padding: 0;
+      }
+      html.dark, html.dark body {
+        background: hsl(264, 22%, 9%);
+        color: hsl(270, 25%, 93%);
+      }
+      #root {
+        background: transparent;
+      }
+    </style>
+    <title>Karim Abbas — Backend Developer &amp; Computer Science Senior</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

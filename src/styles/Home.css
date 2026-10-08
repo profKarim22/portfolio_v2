@@ -1,0 +1,401 @@
+/* ==========================================================================
+   Lavender Neo-Brutalism Hero & Home Section
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - var(--header-height));
+  padding: 0 0 48px;
+  background: hsl(var(--background));
+  display: flex;
+  align-items: stretch;
+  transition: background-color 0.2s ease;
+}
+
+.container.hero-container,
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  grid-template-areas: "badge content";
+  gap: 36px;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1380px;
+}
+
+/* ── Right Column (Content & Terminal) ── */
+.hero-content-col {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  z-index: 2;
+  align-self: center;
+  padding: 48px 0;
+  max-width: 620px;
+  width: 100%;
+  justify-self: end;
+}
+
+.hero-nav-pills {
+  margin-bottom: 4px;
+}
+
+.pill-dot {
+  color: #10b981;
+}
+
+.hero-heading-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hero-name {
+  font-size: clamp(42px, 5.6vw, 62px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: hsl(var(--foreground));
+}
+
+.text-purple-accent {
+  color: hsl(var(--link));
+}
+
+.hero-role-eyebrow {
+  font-size: 20px;
+  font-weight: 600;
+  color: hsl(var(--soft-text));
+  letter-spacing: -0.01em;
+}
+
+.hero-lead {
+  font-size: 17.5px;
+  line-height: 1.65;
+  color: hsl(var(--soft-text));
+  max-width: 38rem;
+}
+
+.hero-lead strong {
+  color: hsl(var(--foreground));
+  font-weight: 600;
+}
+
+/* ── Highlights Grid ── */
+.hero-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 4px 0;
+}
+
+.highlight-neo-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-btn);
+  border: 2px solid var(--outline);
+  box-shadow: 4px 4px 0 var(--shadow);
+  transition: transform var(--duration-btn) var(--ease-out);
+}
+
+.highlight-neo-card:hover {
+  transform: translate(-2px, -2px);
+}
+
+.highlight-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  border: 2px solid var(--outline);
+  background: hsl(var(--button));
+  color: var(--button-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  flex-shrink: 0;
+}
+
+.highlight-text-wrap {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.highlight-tag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: hsl(var(--soft-text));
+  text-transform: uppercase;
+}
+
+.highlight-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Neo-Brutalist Terminal Console ── */
+.neo-terminal-panel {
+  border-radius: var(--radius-panel);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-panel);
+  overflow: hidden;
+  background: linear-gradient(165deg, hsl(var(--panel)) 0%, hsl(var(--panel-muted)) 100%);
+  margin-top: 4px;
+}
+
+.terminal-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: hsl(var(--panel-muted));
+  border-bottom: 2px solid var(--outline);
+}
+
+.terminal-dots-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.term-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid var(--outline);
+}
+
+.dot-red { background: #ef4444; }
+.dot-yellow { background: #eab308; }
+.dot-green { background: #22c55e; }
+
+.terminal-title-text {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.terminal-copy-neo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: var(--radius-btn);
+  border: 1.5px solid var(--outline);
+  box-shadow: 2px 2px 0 var(--shadow);
+  background: hsl(var(--button));
+  color: var(--button-text);
+  cursor: pointer;
+  transition: transform var(--duration-btn) var(--ease-out);
+}
+
+.terminal-copy-neo-btn:hover {
+  transform: translate(-1px, -1px);
+  background: hsl(var(--button-hover));
+}
+
+.terminal-copy-neo-btn.copied {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.terminal-code-body {
+  padding: 14px 16px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.5;
+  background: hsl(var(--input-bg));
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.curl-command-line {
+  color: hsl(var(--foreground));
+  font-weight: 600;
+  margin-bottom: 8px;
+  border-bottom: 1px dashed var(--outline);
+  padding-bottom: 6px;
+}
+
+.term-prompt {
+  color: hsl(var(--link));
+  font-weight: 800;
+}
+
+.terminal-json-output {
+  margin: 0;
+  white-space: pre;
+  color: hsl(var(--foreground));
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+/* ── Actions Row ── */
+.hero-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+/* ── Left Column (Desktop): 3D Badge Arena ── */
+.hero-badge-col {
+  grid-area: badge;
+  width: calc(100% + 96px);
+  margin-left: -96px;
+  height: 100%;
+  min-height: 660px;
+  margin-top: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+}
+
+/* ── Seamless Physical Lanyard Mount to Navbar ── */
+.lanyard-navbar-mount {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.mount-bracket {
+  width: 68px;
+  height: 15px;
+  background: #000000;
+  border-bottom: 3px solid var(--outline);
+  border-left: 3px solid var(--outline);
+  border-right: 3px solid var(--outline);
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 3px 0 var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.bracket-bolt {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1.5px solid #000000;
+  position: absolute;
+  top: 4px;
+}
+
+.bracket-bolt.left {
+  left: 6px;
+}
+
+.bracket-bolt.right {
+  right: 6px;
+}
+
+.mount-slot {
+  width: 22px;
+  height: 8px;
+  background: hsl(var(--button));
+  border: 2px solid var(--outline);
+  border-radius: 0 0 4px 4px;
+  margin-top: -2px;
+  box-shadow: 0 2px 0 var(--shadow);
+}
+
+.badge-frame-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.badge-canvas-box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  touch-action: pan-y;
+}
+
+/* ── Responsive Behavior ── */
+@media (max-width: 1280px) and (min-width: 1025px) {
+  .hero-badge-col {
+    width: calc(100% + 48px);
+    margin-left: -48px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container.hero-container,
+  .hero-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "content"
+      "badge";
+    gap: 40px;
+    max-width: var(--container-max);
+  }
+
+  .hero-content-col {
+    max-width: 100%;
+    justify-self: stretch;
+    padding: 28px 0 0;
+  }
+
+  .hero-badge-col {
+    height: 540px;
+    width: 100%;
+    margin-left: 0;
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    padding: 28px 0 40px;
+  }
+
+  .hero-highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .hero-actions-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions-row a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-badge-col {
+    height: 480px;
+  }
+}

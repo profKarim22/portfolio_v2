@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Lavender Neo-Brutalism Design Tokens (gitdiagram.com/videos design system)
+   ========================================================================== */
+
+:root {
+  /* ── Light Theme (Default) ── */
+  --background: 269 100% 95%;      /* Pale lavender background */
+  --foreground: 0 0% 3.9%;         /* Near-black text */
+  --panel: 270 100% 92%;           /* Card surface gradient start */
+  --panel-muted: 270 95% 88%;      /* Card surface gradient end */
+  --button: 270 97% 75%;           /* Primary button fill: saturated lilac */
+  --button-hover: 271 90% 80%;     /* Primary button hover */
+  --button-text: #000000;          /* High-contrast black button text */
+  --input-bg: 270 92% 89%;         /* Form field background */
+  --link: 271 81% 55%;             /* Vivid purple accent (~#9333ea) */
+  --link-hover: 271 70% 48%;       /* Deeper purple hover */
+  --soft-text: 220 13% 30%;        /* Muted / secondary text: slate gray */
+  --outline: #000000;              /* Thick solid black outline */
+  --shadow: #000000;               /* Hard offset black drop shadow */
+  --highlight: #fbbf24;            /* Amber highlight */
+
+  /* Neutral Button Variant */
+  --subtle-btn: 0 0% 98%;
+  --subtle-btn-muted: 0 0% 93%;
+
+  /* ── Spacing & Layout Tokens ── */
+  --header-height: 64px;
+  --container-max: 1152px;         /* max-w-6xl */
+  --content-cap: 896px;            /* max-w-4xl */
+
+  /* ── Border Radii (Neo-Brutalist Spec) ── */
+  --radius-btn: 6px;
+  --radius-input: 6px;
+  --radius-panel: 8px;
+  --radius-card: 10px;
+  --radius-chip: 6px;
+  --radius-pill: 999px;
+
+  /* ── Hard Offset Drop Shadows (Zero blur) ── */
+  --shadow-panel: 8px 8px 0 var(--shadow);
+  --shadow-card: 8px 8px 0 var(--shadow);
+  --shadow-btn: 4px 4px 0 var(--shadow);
+  --shadow-input: 4px 4px 0 var(--shadow);
+  --shadow-badge: 2px 2px 0 var(--shadow);
+  --shadow-icon-btn: 3px 3px 0 var(--shadow);
+
+  /* ── Outlines ── */
+  --border-thick: 3px solid var(--outline);
+  --border-badge: 2px solid var(--outline);
+
+  /* ── Physics & Transitions ── */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --duration-btn: 160ms;
+  --duration-link: 180ms;
+
+  /* ── Typography Stacks ── */
+  --font-sans: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Geist Mono', 'Fira Code', 'JetBrains Mono', Menlo, Monaco, Consolas, monospace;
+  /* Original portfolio name wordmark typeface (kept from the old design) */
+  --font-brand: 'Fira Code', 'JetBrains Mono', Menlo, Monaco, Consolas, monospace;
+
+  /* ── Legacy Variable Mappings for admin / existing subcomponents ── */
+  --bg-dark: hsl(var(--background));
+  --bg-deeper: hsl(var(--panel-muted));
+  --bg-surface: hsl(var(--panel));
+  --bg-card: hsl(var(--panel));
+  --bg-card-hover: hsl(var(--panel-muted));
+  --text-primary: hsl(var(--foreground));
+  --text-secondary: hsl(var(--soft-text));
+  --text-muted: hsl(var(--soft-text));
+  --text-dim: hsl(var(--soft-text));
+  --accent-cyan: hsl(var(--link));
+  --accent-violet: hsl(var(--link));
+  --accent-emerald: #10b981;
+  --accent-amber: #f59e0b;
+  --border-glass: var(--outline);
+  --border-subtle: var(--outline);
+}
+
+/* ── Dark Theme (Deep Aubergine Neo-Brutalism) ── */
+html.dark,
+body.dark {
+  --background: 264 22% 9%;       /* Deep aubergine-black */
+  --foreground: 270 25% 93%;      /* Lavender-white */
+  --panel: 264 20% 13%;           /* Dark card surface start */
+  --panel-muted: 264 18% 17%;     /* Dark card surface end */
+  --button: 270 85% 68%;          /* Lilac fill in dark mode */
+  --button-hover: 270 90% 75%;    /* Lilac hover */
+  --button-text: #0d0a19;         /* Near-black violet text on lilac */
+  --input-bg: 264 24% 11%;        /* Dark field fill */
+  --link: 280 80% 72%;            /* Brighter lavender purple */
+  --link-hover: 275 90% 80%;      /* Brightest lavender link hover */
+  --soft-text: 270 18% 72%;       /* Muted lavender-gray */
+  --outline: #000000;             /* Solid black outline (reads against lifted dark panels) */
+  --shadow: #000000;              /* Hard black offset shadow */
+
+  --subtle-btn: 270 35% 72%;
+  --subtle-btn-muted: 270 28% 62%;
+
+  --bg-dark: hsl(var(--background));
+  --bg-deeper: hsl(var(--panel-muted));
+  --bg-surface: hsl(var(--panel));
+  --bg-card: hsl(var(--panel));
+  --bg-card-hover: hsl(var(--panel-muted));
+  --text-primary: hsl(var(--foreground));
+  --text-secondary: hsl(var(--soft-text));
+  --text-muted: hsl(var(--soft-text));
+}

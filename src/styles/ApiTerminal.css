@@ -1,0 +1,259 @@
+/* ==========================================================================
+   Lavender Neo-Brutalism API Console / Terminal
+   ========================================================================== */
+
+.terminal-section {
+  background: hsl(var(--background));
+  border-top: 3px solid var(--outline);
+}
+
+.api-terminal-box {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  width: 100%;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-panel);
+}
+
+/* ── Left Sidebar ── */
+.api-sidebar {
+  background: hsl(var(--panel-muted));
+  border-right: 3px solid var(--outline);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar-header-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: hsl(var(--soft-text));
+  text-transform: uppercase;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--outline);
+}
+
+.sidebar-routes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.api-route-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: var(--radius-btn);
+  border: 2px solid var(--outline);
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--shadow);
+  transition: transform var(--duration-btn) var(--ease-out), background-color var(--duration-btn) ease;
+}
+
+.api-route-btn:hover {
+  transform: translate(-1px, -1px);
+  background: hsl(var(--panel));
+}
+
+.api-route-btn.active {
+  background: hsl(var(--button));
+  color: var(--button-text);
+  font-weight: 800;
+  box-shadow: 3px 3px 0 var(--shadow);
+}
+
+.route-status-chip {
+  font-size: 10px;
+  font-weight: 800;
+  background: #10b981;
+  color: #ffffff;
+  padding: 2px 6px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--outline);
+}
+
+/* ── Right Console Area ── */
+.api-console {
+  display: flex;
+  flex-direction: column;
+  background: hsl(var(--input-bg));
+  min-width: 0;
+}
+
+.console-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: hsl(var(--panel));
+  border-bottom: 2px solid var(--outline);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.window-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1.5px solid var(--outline);
+}
+
+.dot-red { background: #ef4444; }
+.dot-yellow { background: #eab308; }
+.dot-green { background: #22c55e; }
+
+.host-label {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--outline);
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  box-shadow: 1.5px 1.5px 0 var(--shadow);
+}
+
+.status-dot-green {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+}
+
+.btn-copy-json {
+  min-height: 34px !important;
+  padding: 4px 12px !important;
+  font-size: 12px !important;
+  box-shadow: 2px 2px 0 var(--shadow) !important;
+}
+
+.btn-copy-json.copied {
+  background: #10b981 !important;
+  color: #ffffff !important;
+}
+
+/* ── cURL Bar ── */
+.curl-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: hsl(var(--panel-muted));
+  border-bottom: 2px solid var(--outline);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: hsl(var(--foreground));
+}
+
+.curl-dollar {
+  color: hsl(var(--link));
+  font-weight: 800;
+}
+
+.curl-command {
+  font-weight: 600;
+}
+
+/* ── Console Body ── */
+.console-body {
+  padding: 18px;
+  max-height: 380px;
+  overflow-y: auto;
+  background: hsl(var(--input-bg));
+}
+
+.json-pre {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: hsl(var(--foreground));
+}
+
+/* Syntax highlighting token classes inside JSON output */
+.json-key {
+  color: hsl(var(--link));
+  font-weight: 700;
+}
+
+.json-string {
+  color: #059669;
+}
+
+.json-number {
+  color: #d97706;
+  font-weight: 700;
+}
+
+.json-boolean {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.json-null {
+  color: hsl(var(--soft-text));
+  font-style: italic;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .api-terminal-box {
+    grid-template-columns: 1fr;
+  }
+
+  .api-sidebar {
+    border-right: none;
+    border-bottom: 3px solid var(--outline);
+  }
+
+  .sidebar-routes {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .api-route-btn {
+    flex: 1 1 calc(50% - 8px);
+  }
+}

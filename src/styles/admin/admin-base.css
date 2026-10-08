@@ -1,0 +1,185 @@
+/* ==========================================================================
+   Lavender Neo-Brutalism Admin Control Center — Base Styles
+   ========================================================================== */
+
+:root {
+  /* ── Core Palette & Surfaces mapped to Neo-Brutalist tokens ── */
+  --adm-bg: hsl(var(--background));
+  --adm-bg-subtle: hsl(var(--panel-muted));
+  --adm-surface: hsl(var(--panel));
+  --adm-surface-elevated: hsl(var(--panel-muted));
+  --adm-surface-hover: hsl(var(--input-bg));
+  --adm-surface-active: hsl(var(--button));
+
+  /* ── Thick Solid Black Neo Outlines ── */
+  --adm-border-subtle: var(--outline);
+  --adm-border-medium: var(--outline);
+  --adm-border-strong: var(--outline);
+  --adm-border-focus: var(--outline);
+
+  /* ── Typography & Contrasts ── */
+  --adm-text-primary: hsl(var(--foreground));
+  --adm-text-secondary: hsl(var(--soft-text));
+  --adm-text-muted: hsl(var(--soft-text));
+  --adm-text-dim: hsl(var(--soft-text));
+
+  /* ── Accent & Semantic Colors ── */
+  --adm-accent: hsl(var(--button));
+  --adm-accent-hover: hsl(var(--button-hover));
+  --adm-accent-subtle: hsl(var(--panel-muted));
+  --adm-accent-glow: hsl(var(--button));
+
+  --adm-success: #10b981;
+  --adm-success-subtle: rgba(16, 185, 129, 0.15);
+  --adm-warning: #f59e0b;
+  --adm-warning-subtle: rgba(245, 158, 11, 0.15);
+  --adm-danger: #ef4444;
+  --adm-danger-subtle: rgba(239, 68, 68, 0.15);
+
+  /* ── Typography Stacks ── */
+  --adm-font-sans: var(--font-sans);
+  --adm-font-mono: var(--font-mono);
+
+  /* ── Sizing & Transitions ── */
+  --adm-sidebar-width: 260px;
+  --adm-sidebar-collapsed-width: 72px;
+  --adm-topbar-height: 64px;
+  --adm-radius-sm: 6px;
+  --adm-radius-md: 8px;
+  --adm-radius-lg: 10px;
+  --adm-transition-fast: 160ms cubic-bezier(0.23, 1, 0.32, 1);
+  --adm-transition-normal: 220ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* ── Application Container ── */
+.admin-app-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--adm-bg);
+  color: var(--adm-text-primary);
+  font-family: var(--adm-font-sans);
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* ── Main Layout Wrapper ── */
+.admin-main-wrapper {
+  flex: 1;
+  margin-left: var(--adm-sidebar-width);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 0;
+  transition: margin-left var(--adm-transition-normal);
+  background-color: var(--adm-bg);
+}
+
+.admin-main-wrapper.sidebar-collapsed {
+  margin-left: var(--adm-sidebar-collapsed-width);
+}
+
+/* ── Top Navigation Bar ── */
+.admin-topbar {
+  height: var(--adm-topbar-height);
+  background: hsl(var(--background));
+  border-bottom: 3px solid var(--outline);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.topbar-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.breadcrumb-root {
+  color: var(--adm-text-muted);
+}
+
+.breadcrumb-sep {
+  color: var(--outline);
+  font-weight: 700;
+}
+
+.breadcrumb-current {
+  color: hsl(var(--link));
+  font-weight: 800;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+/* ── Page Content Container ── */
+.admin-page-content {
+  flex: 1;
+  padding: 2rem 2.25rem 3.5rem;
+  max-width: 1360px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.admin-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* ── Page Header ── */
+.admin-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border-bottom: 3px solid var(--outline);
+  padding-bottom: 1.25rem;
+}
+
+.admin-heading {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--adm-text-primary);
+  margin: 0 0 0.25rem 0;
+}
+
+.admin-subheading {
+  font-size: 0.9rem;
+  color: var(--adm-text-secondary);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.admin-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* ── Skeletons ── */
+.skeleton-row {
+  height: 22px;
+  background: hsl(var(--panel-muted));
+  border: 1.5px solid var(--outline);
+  border-radius: var(--adm-radius-sm);
+}

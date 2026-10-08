@@ -1,0 +1,317 @@
+/* ==========================================================================
+   Lavender Neo-Brutalism Projects Section & Cards
+   ========================================================================== */
+
+.projects-section {
+  background: hsl(var(--background));
+  border-top: 3px solid var(--outline);
+}
+
+/* ── Card Grid (26px gap, minmax 290px per spec) ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 26px;
+  width: 100%;
+}
+
+.project-neo-card {
+  width: 100%;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── 16:9 Media Area on Top ── */
+.project-poster-area {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid var(--outline);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.poster-graphic-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.poster-abstract-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.poster-tech-watermark {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: rgba(0, 0, 0, 0.45);
+  background: rgba(255, 255, 255, 0.6);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--outline);
+}
+
+/* ── Top-Right Image Controls & Navigation Group ── */
+.poster-controls-group {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 10;
+}
+
+.poster-ctrl-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-btn);
+  background: hsl(var(--button));
+  color: var(--button-text);
+  border: 2px solid var(--outline);
+  box-shadow: 2px 2px 0 var(--shadow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 13px;
+  transition: transform var(--duration-btn) var(--ease-out), background-color var(--duration-btn) ease, box-shadow var(--duration-btn) ease;
+}
+
+.poster-ctrl-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--shadow);
+  background: hsl(var(--button-hover));
+}
+
+.poster-ctrl-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--shadow);
+}
+
+.poster-ctrl-btn.nav-btn {
+  background: hsl(var(--panel));
+  color: hsl(var(--foreground));
+}
+
+.poster-ctrl-btn.nav-btn:hover {
+  background: hsl(var(--panel-muted));
+}
+
+.project-poster-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Corner Chip (Bottom-Right) ── */
+.poster-corner-chip {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(23, 17, 31, 0.86);
+  color: #fdfaff;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 3px 7px;
+  letter-spacing: 0.02em;
+  z-index: 4;
+}
+
+/* ── Top-Left: Reusable Featured Badge ── */
+.project-featured-badge,
+.poster-top-badge {
+  position: absolute !important;
+  top: 12px !important;
+  left: 12px !important;
+  right: auto !important;
+  bottom: auto !important;
+  margin: 0 !important;
+  z-index: 15 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  height: 22px;
+  padding: 0 10px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--outline);
+  background: hsl(var(--button));
+  color: var(--button-text);
+  box-shadow: 2px 2px 0 var(--shadow);
+  pointer-events: auto;
+}
+
+.featured-badge-star {
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+/* ── Card Body (padding 14px 16px 16px per spec) ── */
+.project-body-content {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.project-title-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.project-category-prefix {
+  font-size: 12px;
+  font-weight: 500;
+  color: hsl(var(--soft-text));
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.project-headline {
+  font-size: 15px;
+  line-height: 1.35;
+  color: hsl(var(--foreground));
+  margin: 0;
+  word-break: break-word;
+}
+
+.project-headline strong {
+  font-weight: 800;
+}
+
+/* ── 2-Line Clamped Description ── */
+.project-clamped-desc {
+  font-size: 13px;
+  line-height: 1.45;
+  color: hsl(var(--soft-text));
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* ── Meta Row ── */
+.project-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: hsl(var(--soft-text));
+  padding-top: 4px;
+}
+
+.project-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.meta-icon {
+  color: hsl(var(--link));
+}
+
+/* ── Highlights List ── */
+.project-highlights-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 10px;
+  border-radius: var(--radius-btn);
+  background: hsl(var(--background));
+  border: 1.5px solid var(--outline);
+}
+
+.project-highlight-bullet {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  color: hsl(var(--foreground));
+}
+
+.highlight-check-icon {
+  color: #10b981;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+/* ── Tech Badges ── */
+.project-tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.tech-badge-pill {
+  padding: 2px 7px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--outline);
+  background: hsl(var(--panel));
+  color: hsl(var(--foreground));
+  box-shadow: 1.5px 1.5px 0 var(--shadow);
+}
+
+.tech-badge-more {
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: 800;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--outline);
+  background: hsl(var(--button));
+  color: var(--button-text);
+}
+
+/* ── Action Buttons ── */
+.project-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 2px solid var(--outline);
+}
+
+.project-btn-action {
+  flex: 1;
+  min-height: 38px !important;
+  padding: 6px 10px !important;
+  font-size: 12.5px !important;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

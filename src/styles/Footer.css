@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Lavender Neo-Brutalism Footer
+   ========================================================================== */
+
+.neo-footer {
+  background: hsl(var(--panel-muted));
+  border-top: 3px solid var(--outline);
+  padding: 36px 0;
+  position: relative;
+  z-index: 10;
+  transition: background-color 0.2s ease;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.footer-logo {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.footer-meta-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-badge {
+  font-size: 9.5px;
+}
+
+.footer-copy {
+  font-size: 13px;
+  color: hsl(var(--soft-text));
+  margin: 0;
+  font-weight: 500;
+}

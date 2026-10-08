@@ -1,0 +1,254 @@
+@import "./variables.css";
+
+/* --- Skills Section Container --- */
+.techstack-section {
+  width: 100%;
+  padding: 6.5rem 2rem;
+  background: #060913;
+  position: relative;
+}
+
+.techstack-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+/* Header */
+.techstack-header-wrap {
+  text-align: center;
+  max-width: 820px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.techstack-domain-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  padding: 0.4rem 1.1rem;
+  border-radius: 9999px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: 0.5px;
+}
+
+.star-icon {
+  color: #fbbf24;
+  font-size: 1rem;
+}
+
+.techstack-main-title {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: -0.8px;
+  margin: 0;
+}
+
+.techstack-lead-desc {
+  color: #94a3b8;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 760px;
+}
+
+/* --- Cards Grid --- */
+.techstack-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+/* --- The Modern Cluster Card --- */
+.techstack-card {
+  position: relative;
+  background: rgba(10, 15, 29, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 2.2rem 1.8rem;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+.techstack-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--cluster-accent, rgba(56, 189, 248, 0.4));
+  box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.7),
+              0 0 24px -6px var(--cluster-accent, rgba(56, 189, 248, 0.25));
+}
+
+/* --- Unified Header Bar --- */
+.cluster-header-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Uniform Glass Squircle Icon Tile */
+.cluster-icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid var(--cluster-accent, rgba(56, 189, 248, 0.3));
+  box-shadow: inset 0 0 14px -2px var(--cluster-accent, rgba(56, 189, 248, 0.25));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.techstack-card:hover .cluster-icon-box {
+  transform: scale(1.08);
+  box-shadow: inset 0 0 18px 0px var(--cluster-accent, rgba(56, 189, 248, 0.35));
+}
+
+.cluster-svg {
+  width: 24px;
+  height: 24px;
+  color: var(--cluster-accent, #38bdf8);
+}
+
+/* Symmetrical Header Pills */
+.cluster-pill-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cluster-primary-pill {
+  display: inline-block;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #060913;
+  background: var(--cluster-accent, #38bdf8);
+  padding: 0.22rem 0.65rem;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  width: fit-content;
+}
+
+.cluster-meta-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.76rem;
+  color: #94a3b8;
+}
+
+/* Title & Description */
+.cluster-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.cluster-description {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* --- Skills Tags Matrix --- */
+.cluster-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-content: flex-start;
+  margin-top: auto;
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.skill-chip-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.38rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  transition: all 0.22s ease;
+  user-select: none;
+}
+
+.skill-chip-pill:hover {
+  background: rgba(22, 33, 58, 0.9);
+  border-color: var(--cluster-accent, rgba(56, 189, 248, 0.4));
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.4);
+}
+
+/* SVG icons inside pills: inherit muted colors (opacity: 0.7) and transition to accent colors on card hover */
+.skill-chip-icon {
+  font-size: 0.95rem;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  opacity: 0.7;
+  transition: opacity 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.techstack-card:hover .skill-chip-icon {
+  color: var(--cluster-accent);
+  opacity: 1;
+}
+
+.skill-chip-pill:hover .skill-chip-icon {
+  color: var(--cluster-accent);
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+.skill-chip-name {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 1080px) {
+  .techstack-cards-grid {
+    grid-template-columns: 1fr;
+    max-width: 680px;
+  }
+}
+
+@media (max-width: 768px) {
+  .techstack-section {
+    padding: 4.5rem 1.25rem;
+  }
+
+  .techstack-card {
+    padding: 1.6rem 1.4rem;
+  }
+}

@@ -1,0 +1,276 @@
+/* ==========================================================================
+   Lavender Neo-Brutalism Header & Navigation Bar
+   ========================================================================== */
+
+.neo-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background: hsl(var(--background));
+  border-bottom: 3px solid var(--outline);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.header-inner {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Original Brand Monospace Logo Wordmark ── */
+.navbar-logo {
+  font-family: var(--font-brand, 'Fira Code', 'JetBrains Mono', monospace);
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  font-size: 1.18rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.navbar-logo:hover {
+  opacity: 0.85;
+}
+
+.logo-bracket {
+  color: var(--text-dim, hsl(var(--soft-text)));
+  font-weight: 600;
+}
+
+.logo-text {
+  color: hsl(var(--foreground));
+  font-weight: 700;
+}
+
+.logo-dot {
+  color: hsl(var(--link));
+  font-weight: 700;
+}
+
+.logo-method {
+  color: hsl(var(--link));
+  font-weight: 700;
+}
+
+/* ── Desktop Nav ── */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: hsl(var(--foreground));
+  padding: 6px 4px;
+  transition: color var(--duration-link) ease;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.nav-link:hover {
+  color: hsl(var(--link));
+}
+
+.nav-link.active {
+  font-weight: 600;
+  color: hsl(var(--link));
+  position: relative;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--outline);
+}
+
+/* ── Header Status Pill Badge ── */
+.header-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--outline);
+  background: hsl(var(--panel));
+  box-shadow: 2px 2px 0 var(--shadow);
+  font-size: 12px;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.status-ping-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  border: 1.5px solid var(--outline);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
+}
+
+.status-badge-text {
+  letter-spacing: 0.02em;
+}
+
+/* ── Neo-Brutalist Theme Toggle Button ── */
+.theme-toggle-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-btn);
+  border: 2px solid var(--outline);
+  background: hsl(var(--panel));
+  color: hsl(var(--foreground));
+  box-shadow: 2px 2px 0 var(--shadow);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform var(--duration-btn) var(--ease-out), background-color var(--duration-btn) ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: translate(-2px, -2px);
+  background: hsl(var(--button));
+  color: var(--button-text);
+}
+
+.theme-toggle-btn:active {
+  transform: translate(1px, 1px) scale(0.95);
+}
+
+.theme-icon {
+  font-size: 17px;
+}
+
+/* ── Mobile Actions ── */
+.mobile-header-actions {
+  display: none;
+  align-items: center;
+  gap: 12px;
+}
+
+.mobile-menu-trigger {
+  min-height: 38px;
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: var(--radius-btn);
+  border: 2px solid var(--outline);
+  box-shadow: 3px 3px 0 var(--shadow);
+}
+
+/* ── Mobile Floating Panel & Overlay ── */
+.mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  z-index: 2000;
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+  animation: overlayFadeIn 200ms ease-out;
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.mobile-panel {
+  width: 100%;
+  max-width: 18rem;
+  height: fit-content;
+  max-height: calc(100vh - 32px);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 6px 6px 0 var(--shadow) !important;
+  animation: panelSlideIn 240ms var(--ease-out);
+}
+
+@keyframes panelSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--outline);
+}
+
+.close-icon-btn {
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--outline);
+  box-shadow: 2px 2px 0 var(--shadow);
+}
+
+.mobile-links-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mobile-nav-btn {
+  width: 100%;
+  min-height: 48px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: var(--radius-btn);
+  text-align: center;
+  border: 2px solid var(--outline);
+  box-shadow: 3px 3px 0 var(--shadow);
+}
+
+.mobile-panel-footer {
+  padding-top: 10px;
+  border-top: 2px solid var(--outline);
+  display: flex;
+  justify-content: center;
+}
+
+/* ── Responsive Queries ── */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-header-actions {
+    display: flex;
+  }
+
+  .header-inner {
+    padding: 0 16px;
+  }
+}

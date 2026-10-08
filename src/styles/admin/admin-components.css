@@ -1,0 +1,300 @@
+/* ==========================================================================
+   Lavender Neo-Brutalism Admin Components
+   ========================================================================== */
+
+/* ── Status Indicator ── */
+.backend-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  background: hsl(var(--panel));
+  border: 2px solid var(--outline);
+  box-shadow: 2px 2px 0 var(--shadow);
+  border-radius: var(--radius);
+  font-family: var(--font-brand, 'Fira Code', monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--adm-text-primary);
+}
+
+.status-indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--outline);
+}
+
+.backend-status-badge.online .status-indicator-dot {
+  background: var(--adm-success);
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+}
+
+.backend-status-badge.offline .status-indicator-dot {
+  background: var(--adm-danger);
+  box-shadow: 0 0 6px rgba(239, 68, 68, 0.6);
+}
+
+.backend-status-badge.checking .status-indicator-dot {
+  background: var(--adm-warning);
+  box-shadow: 0 0 6px rgba(245, 158, 11, 0.6);
+}
+
+.btn-view-public {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--outline);
+  box-shadow: 2px 2px 0 var(--shadow);
+  background: hsl(var(--panel));
+  color: var(--adm-text-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all var(--adm-transition-fast);
+}
+
+.btn-view-public:hover {
+  color: var(--adm-text-primary);
+  background: hsl(var(--panel-muted));
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--shadow);
+}
+
+.ext-icon {
+  font-size: 0.7rem;
+}
+
+/* ── Buttons ── */
+.btn-primary-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.15rem;
+  background: hsl(var(--button));
+  color: hsl(var(--button-text));
+  border: 2.5px solid var(--outline);
+  box-shadow: 3px 3px 0 var(--shadow);
+  border-radius: var(--radius);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--adm-transition-fast), box-shadow var(--adm-transition-fast), background var(--adm-transition-fast);
+}
+
+.btn-primary-action:hover {
+  background: hsl(var(--button-hover));
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--shadow);
+}
+
+.btn-primary-action:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--shadow);
+}
+
+.btn-secondary-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.15rem;
+  background: hsl(var(--panel));
+  color: var(--adm-text-primary);
+  border: 2px solid var(--outline);
+  box-shadow: 3px 3px 0 var(--shadow);
+  border-radius: var(--radius);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform var(--adm-transition-fast), box-shadow var(--adm-transition-fast), background var(--adm-transition-fast);
+}
+
+.btn-secondary-action:hover {
+  background: hsl(var(--panel-muted));
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+
+.btn-secondary-action:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--shadow);
+}
+
+/* ── Badges & Tags ── */
+.domain-pill {
+  display: inline-block;
+  font-family: var(--font-brand, 'Fira Code', monospace);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--adm-text-primary);
+  border: 1.5px solid var(--outline);
+  background: hsl(var(--panel-muted));
+  box-shadow: 1.5px 1.5px 0 var(--shadow);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius);
+}
+
+.badge-featured {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-brand, 'Fira Code', monospace);
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #713f12;
+  background: #fef08a;
+  border: 1.5px solid var(--outline);
+  box-shadow: 2px 2px 0 var(--shadow);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius);
+}
+
+.badge-standard {
+  display: inline-block;
+  font-family: var(--font-brand, 'Fira Code', monospace);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--adm-text-muted);
+  background: hsl(var(--panel-muted));
+  border: 1.5px solid var(--outline);
+  box-shadow: 1.5px 1.5px 0 var(--shadow);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius);
+}
+
+.tech-tag-chip {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: var(--font-brand, 'Fira Code', monospace);
+  color: var(--adm-text-primary);
+  background: hsl(var(--panel-muted));
+  border: 1.5px solid var(--outline);
+  box-shadow: 1.5px 1.5px 0 var(--shadow);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius);
+  margin-right: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+/* ── Toast Notifications System ── */
+.admin-toast-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  pointer-events: none;
+}
+
+.admin-toast {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.15rem;
+  background: hsl(var(--panel));
+  border: 2.5px solid var(--outline);
+  border-radius: var(--radius);
+  color: var(--adm-text-primary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  box-shadow: 4px 4px 0 var(--shadow);
+  pointer-events: auto;
+  animation: slideInRight 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.admin-toast.toast-success {
+  border-left: 6px solid var(--adm-success);
+}
+
+.admin-toast.toast-error {
+  border-left: 6px solid var(--adm-danger);
+}
+
+.admin-toast.toast-info {
+  border-left: 6px solid hsl(var(--button));
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ── Modal Dialog ── */
+.admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.admin-confirm-dialog {
+  background: hsl(var(--panel));
+  border: 3px solid var(--outline);
+  border-radius: var(--radius);
+  max-width: 440px;
+  width: 100%;
+  padding: 1.75rem;
+  box-shadow: 8px 8px 0 var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dialog-header h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--adm-text-primary);
+  margin: 0 0 0.35rem 0;
+}
+
+.dialog-header p {
+  font-size: 0.85rem;
+  color: var(--adm-text-secondary);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.dialog-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.btn-danger-action {
+  background: var(--adm-danger);
+  color: #ffffff;
+  border: 2.5px solid var(--outline);
+  box-shadow: 3px 3px 0 var(--shadow);
+  border-radius: var(--radius);
+  padding: 0.55rem 1.15rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all var(--adm-transition-fast);
+}
+
+.btn-danger-action:hover {
+  background: #dc2626;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--shadow);
+}

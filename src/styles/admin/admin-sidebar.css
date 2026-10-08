@@ -1,0 +1,339 @@
+/* ==========================================================================
+   Lavender Neo-Brutalism Admin Sidebar
+   ========================================================================== */
+
+/* ── Sidebar Component ── */
+.admin-sidebar {
+  width: var(--adm-sidebar-width);
+  background: hsl(var(--panel));
+  border-right: 3px solid var(--outline);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  transition: width var(--adm-transition-normal), transform var(--adm-transition-normal);
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.admin-sidebar.collapsed {
+  width: var(--adm-sidebar-collapsed-width);
+}
+
+.admin-sidebar-header {
+  height: var(--adm-topbar-height);
+  padding: 0 1.25rem;
+  border-bottom: 3px solid var(--outline);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  background: hsl(var(--background));
+}
+
+@media (min-width: 769px) {
+  .admin-sidebar.collapsed .admin-sidebar-header {
+    padding: 0;
+    justify-content: center;
+  }
+
+  .admin-sidebar.collapsed .admin-logo-link {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .admin-sidebar.collapsed .admin-logo-text,
+  .admin-sidebar.collapsed .sidebar-group-title,
+  .admin-sidebar.collapsed .admin-nav-label,
+  .admin-sidebar.collapsed .user-details,
+  .admin-sidebar.collapsed .logout-text {
+    display: none !important;
+  }
+
+  .admin-sidebar.collapsed .admin-nav-item {
+    justify-content: center;
+    padding: 0.65rem 0;
+  }
+
+  .admin-sidebar.collapsed .admin-user-pill {
+    justify-content: center;
+    padding: 0.4rem;
+  }
+}
+
+.admin-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+}
+
+.admin-logo-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius);
+  background: hsl(var(--button));
+  border: 2.5px solid var(--outline);
+  box-shadow: 2px 2px 0 var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-brand, 'Fira Code', monospace);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: hsl(var(--button-text));
+  flex-shrink: 0;
+  transition: transform var(--adm-transition-fast), box-shadow var(--adm-transition-fast);
+}
+
+.collapsed-logo-btn:hover .admin-logo-mark,
+.admin-logo-link:hover .admin-logo-mark {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--shadow);
+}
+
+.admin-logo-text {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.admin-logo-title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--adm-text-primary);
+  margin: 0;
+}
+
+.admin-logo-env {
+  font-family: var(--font-brand, 'Fira Code', monospace);
+  font-size: 0.68rem;
+  color: hsl(var(--link));
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.admin-sidebar-toggle-btn {
+  background: hsl(var(--panel-muted));
+  border: 2px solid var(--outline);
+  box-shadow: 2px 2px 0 var(--shadow);
+  color: var(--adm-text-primary);
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--adm-transition-fast);
+}
+
+.admin-sidebar-toggle-btn:hover {
+  background: hsl(var(--button));
+  color: hsl(var(--button-text));
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--shadow);
+}
+
+/* Collapsed toggle button on edge */
+.admin-sidebar.collapsed .admin-sidebar-toggle-btn {
+  position: absolute;
+  right: -13px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius);
+  background: hsl(var(--button));
+  border: 2px solid var(--outline);
+  color: hsl(var(--button-text));
+  font-size: 0.7rem;
+  box-shadow: 2px 2px 0 var(--shadow);
+  z-index: 120;
+}
+
+.admin-sidebar.collapsed .admin-sidebar-toggle-btn:hover {
+  transform: translateY(-50%) translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--shadow);
+}
+
+/* ── Sidebar Navigation & Groups ── */
+.admin-sidebar-nav {
+  flex: 1;
+  padding: 1.25rem 0.85rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sidebar-nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sidebar-group-title {
+  font-family: var(--font-brand, 'Fira Code', monospace);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--adm-text-muted);
+  padding: 0 0.75rem 0.35rem 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  color: var(--adm-text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all var(--adm-transition-fast);
+  position: relative;
+  white-space: nowrap;
+}
+
+.admin-nav-item:hover {
+  color: var(--adm-text-primary);
+  background: hsl(var(--panel-muted));
+  border-color: var(--outline);
+  box-shadow: 2px 2px 0 var(--shadow);
+  transform: translate(-1px, -1px);
+}
+
+.admin-nav-item.active {
+  color: hsl(var(--button-text)) !important;
+  background: hsl(var(--button));
+  border-color: var(--outline);
+  box-shadow: 3px 3px 0 var(--shadow);
+  font-weight: 800;
+  transform: translate(-1px, -1px);
+}
+
+.admin-nav-item.active::before {
+  display: none;
+}
+
+.admin-nav-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  color: var(--adm-text-muted);
+  transition: color var(--adm-transition-fast);
+}
+
+.admin-nav-item:hover .admin-nav-icon {
+  color: var(--adm-text-primary);
+}
+
+.admin-nav-item.active .admin-nav-icon {
+  color: hsl(var(--button-text)) !important;
+}
+
+.admin-nav-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Sidebar Footer ── */
+.admin-sidebar-footer {
+  padding: 1rem 0.85rem;
+  border-top: 3px solid var(--outline);
+  background: hsl(var(--panel-muted));
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.admin-user-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.65rem;
+  border-radius: var(--radius);
+  background: hsl(var(--panel));
+  border: 2px solid var(--outline);
+  box-shadow: 2px 2px 0 var(--shadow);
+  overflow: hidden;
+}
+
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius);
+  background: hsl(var(--button));
+  border: 2px solid var(--outline);
+  color: hsl(var(--button-text));
+  font-family: var(--font-brand, 'Fira Code', monospace);
+  font-weight: 800;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  line-height: 1.25;
+}
+
+.user-email {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--adm-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-role {
+  font-family: var(--font-brand, 'Fira Code', monospace);
+  font-size: 0.65rem;
+  color: var(--adm-text-muted);
+  font-weight: 600;
+}
+
+.admin-logout-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: hsl(var(--panel));
+  border: 2px solid var(--outline);
+  box-shadow: 2px 2px 0 var(--shadow);
+  border-radius: var(--radius);
+  color: var(--adm-text-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--adm-transition-fast);
+}
+
+.admin-logout-btn:hover {
+  color: #ffffff;
+  background: #ef4444;
+  border-color: var(--outline);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--shadow);
+}

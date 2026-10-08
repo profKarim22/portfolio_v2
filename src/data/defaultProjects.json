@@ -1,0 +1,271 @@
+{
+  "projects": [
+    {
+      "id": "birthday-gift-web-experience",
+      "_id": "6aab46b1734131e7e3fae591",
+      "title": "Birthday Gift Web Experience",
+      "badge": "Interactive Web Experience",
+      "domain": "Frontend Development",
+      "domainColor": "#E88A9B",
+      "description": "An interactive birthday web experience designed to transform personal memories, photos, music, and heartfelt messages into a personalized digital journey. The project combines immersive visual presentation, smooth animations, interactive sections, and responsive layouts to create an engaging experience across desktop and mobile devices.",
+      "featured": true,
+      "isFeatured": true,
+      "metrics": [
+        { "label": "Responsive Experience", "value": "100%" },
+        { "label": "Interactive Storytelling", "value": "Multi-Section" }
+      ],
+      "highlights": [
+        "Interactive, story-driven birthday experience built around personalized memories and visual content.",
+        "Responsive layout optimized for both desktop and mobile screens.",
+        "Smooth animations and transitions designed to keep interactions natural and engaging.",
+        "Integrated background music to enhance the immersive experience.",
+        "Organized photo-based sections for presenting memories in a visually engaging format.",
+        "Deployed as a production-ready web experience."
+      ],
+      "tech": ["HTML5", "CSS3", "JavaScript", "Canvas API", "Google Fonts"],
+      "techStack": ["HTML5", "CSS3", "JavaScript", "Canvas API", "Google Fonts"],
+      "github": "https://github.com/profKarim22/birthday-gift-webapp",
+      "githubUrl": "https://github.com/profKarim22/birthday-gift-webapp",
+      "liveDemo": "https://birthday-gift-webapp.vercel.app/",
+      "liveUrl": "https://birthday-gift-webapp.vercel.app/",
+      "figmaLink": null,
+      "figmaUrl": null,
+      "order": 1
+    },
+    {
+      "id": "user-greeting",
+      "_id": "6aa5f355e43487097bf74b0a",
+      "title": "User Greeting & UI Component System",
+      "badge": "UI/UX & Frontend",
+      "domain": "Design System & Frontend",
+      "domainColor": "#10b981",
+      "description": "A component system and user greeting interface built directly from custom Figma specifications into a modern, accessible React and TypeScript component suite.",
+      "featured": false,
+      "isFeatured": false,
+      "metrics": [
+        { "label": "Accessibility", "value": "100% WCAG AA" },
+        { "label": "Type Safety", "value": "Strict TS" },
+        { "label": "Runtime CSS", "value": "0 Overhead" }
+      ],
+      "highlights": [
+        "Direct translation of Figma design specifications into React components",
+        "Accessible UI primitives built on Radix UI component library",
+        "Type-safe component architecture with TypeScript",
+        "Modular, responsive dashboard widget structure"
+      ],
+      "tech": ["UI/UX Design", "Figma", "React.js", "TypeScript", "Radix UI", "Vite"],
+      "techStack": ["UI/UX Design", "Figma", "React.js", "TypeScript", "Radix UI", "Vite"],
+      "github": "https://github.com/profKarim22/Usergreetingcopy",
+      "githubUrl": "https://github.com/profKarim22/Usergreetingcopy",
+      "liveDemo": null,
+      "liveUrl": null,
+      "figmaLink": "https://www.figma.com/design/JtPirzr9plI6jisE6a04vK/User-Greeting--Copy-",
+      "figmaUrl": "https://www.figma.com/design/JtPirzr9plI6jisE6a04vK/User-Greeting--Copy-",
+      "order": 2
+    },
+    {
+      "id": "daily-expense-tracker",
+      "_id": "6aa6ca7635b4f9172a8ebc89",
+      "title": "Daily Expense Tracker",
+      "badge": "Mobile App",
+      "domain": "Mobile Development",
+      "domainColor": "#38bdf8",
+      "description": "A lightweight, offline-first personal expense tracking application built with Flutter and Material 3. It helps users track daily spending, monitor weekly and monthly budget trends, categorize expenses, and export financial records locally without requiring an external backend.",
+      "featured": false,
+      "isFeatured": false,
+      "metrics": [
+        { "label": "Local Persistence", "value": "JSON Storage" },
+        { "label": "Analytics", "value": "7-Day Trends" }
+      ],
+      "highlights": [
+        "Offline-first expense tracking with local JSON persistence",
+        "Complete expense CRUD with automatic balance recalculation",
+        "Interactive 7-day spending analytics and category breakdown",
+        "Local authentication and persistent user sessions",
+        "CSV export for financial records"
+      ],
+      "tech": ["Flutter", "Dart", "Material 3", "SharedPreferences", "Intl", "Cupertino Icons"],
+      "techStack": ["Flutter", "Dart", "Material 3", "SharedPreferences", "Intl", "Cupertino Icons"],
+      "github": "https://github.com/profKarim22/Daily-Expense-Tracker_Project_V2.git",
+      "githubUrl": "https://github.com/profKarim22/Daily-Expense-Tracker_Project_V2.git",
+      "liveDemo": null,
+      "liveUrl": null,
+      "figmaLink": null,
+      "figmaUrl": null,
+      "order": 3
+    },
+    {
+      "id": "event-system",
+      "_id": "6aa5f355e43487097bf74b0f",
+      "title": "AI Event Management & Recommendation System",
+      "badge": "Featured Project",
+      "domain": "AI & Event Platform",
+      "domainColor": "#a855f7",
+      "description": "An AI-powered event management and recommendation platform featuring intelligent event recommendations, event discovery, intelligent search, digital ticketing, real-time communication, and B2B event services.",
+      "featured": true,
+      "isFeatured": true,
+      "metrics": [
+        { "label": "Backend", "value": "Node.js + Express.js" },
+        { "label": "Database", "value": "MySQL + Prisma ORM" },
+        { "label": "Real-Time", "value": "Socket.IO" }
+      ],
+      "highlights": [
+        "AI-driven event discovery & personalized recommendation pipeline",
+        "Digital ticketing with secure verification & attendee management",
+        "Real-time communication & live notifications powered by Socket.IO",
+        "Comprehensive B2B event dashboard & services"
+      ],
+      "tech": [
+        "Node.js",
+        "TypeScript",
+        "Express.js",
+        "MySQL",
+        "Prisma ORM",
+        "Python",
+        "FastAPI",
+        "Machine Learning",
+        "NLP",
+        "Socket.IO",
+        "REST API"
+      ],
+      "techStack": [
+        "Node.js",
+        "TypeScript",
+        "Express.js",
+        "MySQL",
+        "Prisma ORM",
+        "Python",
+        "FastAPI",
+        "Machine Learning",
+        "NLP",
+        "Socket.IO",
+        "REST API"
+      ],
+      "github": "https://github.com/profKarim22/AI-Event-Management-Recommendation-System",
+      "githubUrl": "https://github.com/profKarim22/AI-Event-Management-Recommendation-System",
+      "liveDemo": "https://lightgreen-albatross-650223.hostingersite.com/",
+      "liveUrl": "https://lightgreen-albatross-650223.hostingersite.com/",
+      "figmaLink": null,
+      "figmaUrl": null,
+      "order": 4
+    }
+  ],
+  "apiEndpoints": {
+    "profile": {
+      "name": "Karim Abbas Elashiry",
+      "title": "Backend Developer & Computer Science Senior",
+      "education": {
+        "institute": "Higher Institute of Computer Science and Information Systems (HICIS)",
+        "location": "6th of October City, Egypt",
+        "level": "Level 04 (Senior Year)",
+        "major": "Computer Science"
+      },
+      "primary_focus": "Backend Engineering, API Design & Scalable Systems",
+      "technical_core": {
+        "backend": [
+          "Node.js",
+          "Express.js",
+          "TypeScript",
+          "RESTful APIs",
+          "JWT & Authentication"
+        ],
+        "databases": ["SQL", "NoSQL", "MySQL", "MongoDB", "Mongoose"],
+        "systems_foundation": [
+          "C++",
+          "Object-Oriented Programming",
+          "Data Structures",
+          "Algorithms & Problem Solving"
+        ],
+        "exploratory": [
+          "Redis",
+          "Computer Vision Fundamentals",
+          "Modern UI Essentials",
+          "Flutter"
+        ]
+      },
+      "status": "Open for Backend Engineering Roles & Internships"
+    },
+    "skills": {
+      "primary_domain_backend": [
+        "Node.js",
+        "Express.js",
+        "TypeScript",
+        "JavaScript (ES6+)",
+        "MySQL",
+        "MongoDB",
+        "SQL",
+        "NoSQL",
+        "RESTful APIs",
+        "JWT & Authentication"
+      ],
+      "backend_tools_and_data": ["Mongoose", "Postman"],
+      "foundations_and_algorithms": [
+        "C++",
+        "Object-Oriented Programming (OOP)",
+        "Data Structures",
+        "Algorithms & Problem Solving"
+      ],
+      "applied_and_exploratory": [
+        "Redis",
+        "Computer Vision Basics (Image Processing & Pattern Detection)",
+        "Client-Side Foundations (HTML5, CSS3, React Basics, Flutter)"
+      ]
+    },
+
+    "projects": [
+      {
+        "name": "AI Event Management & Recommendation System",
+        "stack": "Node.js + Express.js + TypeScript",
+        "database": "MySQL + Prisma ORM",
+        "features": "AI Recommendations, Real-Time Chat, Digital Ticketing"
+      },
+      {
+        "name": "Algorithmic Storytelling & Web Audio Experience",
+        "stack": "Vanilla JavaScript + HTML5 Canvas",
+        "engine": "Web Audio API + Procedural Synthesizer",
+        "features": "Matrix Rain Simulation, Parametric Geometry, Image Optimization"
+      },
+      {
+        "name": "Personal Portfolio",
+        "stack": "React.js + Three.js + Vite",
+        "features": "3D Interactive Badge, Live API Console, Glassmorphism UI"
+      },
+      {
+        "name": "User Greeting & UI Component System",
+        "stack": "React.js + TypeScript + Radix UI",
+        "design": "Figma Specifications",
+        "features": "Accessible Components, Type-Safe Architecture"
+      }
+    ],
+
+    "status": {
+      "portfolio": "Online",
+      "api_console": "Interactive",
+      "data_format": "JSON",
+      "availability": "Public"
+    }
+  },
+  "statusConfig": {
+    "mode": "available",
+    "modes": {
+      "available": {
+        "label": "Open for Opportunities",
+        "color": "#10b981",
+        "borderColor": "rgba(16, 185, 129, 0.25)",
+        "bgColor": "rgba(16, 185, 129, 0.06)"
+      },
+      "committed": {
+        "label": "Committed to Contract",
+        "color": "#f59e0b",
+        "borderColor": "rgba(245, 158, 11, 0.25)",
+        "bgColor": "rgba(245, 158, 11, 0.06)"
+      },
+      "offgrid": {
+        "label": "Off-Grid // Deep Architecture",
+        "color": "#f43f5e",
+        "borderColor": "rgba(244, 63, 94, 0.25)",
+        "bgColor": "rgba(244, 63, 94, 0.06)"
+      }
+    }
+  }
+}

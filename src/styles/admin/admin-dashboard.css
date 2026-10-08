@@ -1,0 +1,569 @@
+/* ==========================================================================
+   Lavender Neo-Brutalism Admin Dashboard & Login Styles
+   ========================================================================== */
+
+/* ── Hero / Command Welcome Section ── */
+.admin-hero-banner {
+  position: relative;
+  background: hsl(var(--panel));
+  border: 3px solid var(--outline);
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+  overflow: hidden;
+  box-shadow: 6px 6px 0 var(--shadow);
+}
+
+.hero-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-brand, 'Fira Code', monospace);
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: hsl(var(--button-text));
+  background: hsl(var(--button));
+  border: 2px solid var(--outline);
+  box-shadow: 2px 2px 0 var(--shadow);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius);
+  margin-bottom: 0.65rem;
+}
+
+.hero-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--adm-text-primary);
+  margin: 0 0 0.35rem 0;
+}
+
+.hero-description {
+  font-size: 0.88rem;
+  color: var(--adm-text-secondary);
+  margin: 0;
+}
+
+.hero-telemetry-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1rem;
+  background: hsl(var(--panel-muted));
+  border: 2px solid var(--outline);
+  box-shadow: 2px 2px 0 var(--shadow);
+  border-radius: var(--radius);
+  font-family: var(--font-brand, 'Fira Code', monospace);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--adm-text-primary);
+  white-space: nowrap;
+}
+
+/* ── Metric Cards Grid ── */
+.admin-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.metric-card {
+  background: hsl(var(--panel));
+  border: 3px solid var(--outline);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 4px 4px 0 var(--shadow);
+  transition: transform var(--adm-transition-fast), box-shadow var(--adm-transition-fast);
+}
+
+.metric-card:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 6px 6px 0 var(--shadow);
+}
+
+.metric-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.metric-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--adm-text-secondary);
+}
+
+.metric-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius);
+  border: 2px solid var(--outline);
+  box-shadow: 2px 2px 0 var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.metric-icon-wrap.icon-blue {
+  background: hsl(var(--button));
+  color: hsl(var(--button-text));
+}
+
+.metric-icon-wrap.icon-amber {
+  background: #fef08a;
+  color: #713f12;
+}
+
+.metric-icon-wrap.icon-emerald {
+  background: #bbf7d0;
+  color: #14532d;
+}
+
+.metric-icon-wrap.icon-purple {
+  background: #e9d5ff;
+  color: #581c87;
+}
+
+.metric-value-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metric-value {
+  font-size: 1.85rem;
+  font-weight: 800;
+  font-family: var(--font-brand, 'Fira Code', monospace);
+  letter-spacing: -0.5px;
+  color: var(--adm-text-primary);
+  line-height: 1.1;
+}
+
+.metric-sub {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--adm-text-muted);
+  font-family: var(--font-brand, 'Fira Code', monospace);
+}
+
+/* ── Generic Admin Cards & Grids ── */
+.admin-two-col-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.5rem;
+}
+
+.admin-card {
+  background: hsl(var(--panel));
+  border: 3px solid var(--outline);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 5px 5px 0 var(--shadow);
+}
+
+.admin-card.no-padding .card-body {
+  padding: 0;
+}
+
+.card-header {
+  padding: 1.1rem 1.4rem;
+  border-bottom: 3px solid var(--outline);
+  background: hsl(var(--panel-muted));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-header h3 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--adm-text-primary);
+  margin: 0;
+}
+
+.card-header-link {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: hsl(var(--link));
+  text-decoration: none;
+  transition: color var(--adm-transition-fast);
+}
+
+.card-header-link:hover {
+  text-decoration: underline;
+}
+
+.card-body {
+  padding: 1.4rem;
+}
+
+/* ── Interactive Status Cards Grid ── */
+.status-mode-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.status-selectable-card {
+  background: hsl(var(--panel));
+  border: 3px solid var(--outline);
+  border-radius: var(--radius);
+  padding: 1.35rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 3px 3px 0 var(--shadow);
+  transition: all var(--adm-transition-fast);
+  position: relative;
+}
+
+.status-selectable-card:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 var(--shadow);
+  background: hsl(var(--panel-muted));
+}
+
+.status-selectable-card.active {
+  border-color: var(--outline);
+  background: hsl(var(--panel-muted));
+  box-shadow: 5px 5px 0 var(--shadow);
+}
+
+.card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status-dot-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid var(--outline);
+}
+
+.status-key-label {
+  font-family: var(--font-brand, 'Fira Code', monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--adm-text-muted);
+}
+
+.check-icon {
+  color: var(--adm-success);
+  font-size: 1rem;
+}
+
+.card-mid-row h4 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--adm-text-primary);
+  margin: 0 0 0.3rem 0;
+}
+
+.card-mid-row p {
+  font-size: 0.8rem;
+  color: var(--adm-text-secondary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ── Login Page ── */
+.admin-login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(var(--background));
+  padding: 1.5rem;
+  position: relative;
+}
+
+.admin-login-card {
+  width: 100%;
+  max-width: 440px;
+  background: hsl(var(--panel));
+  border: 3.5px solid var(--outline);
+  border-radius: var(--radius);
+  padding: 2.25rem;
+  box-shadow: 8px 8px 0 var(--shadow);
+}
+
+.login-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.btn-back-to-site {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.75rem;
+  border: 2px solid var(--outline);
+  border-radius: var(--radius);
+  background: hsl(var(--panel));
+  box-shadow: 2px 2px 0 var(--shadow);
+  color: var(--adm-text-primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform var(--adm-transition-fast), box-shadow var(--adm-transition-fast);
+}
+
+.btn-back-to-site:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--shadow);
+  background: hsl(var(--panel-muted));
+}
+
+.login-card-header {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.login-shield-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius);
+  background: hsl(var(--button));
+  border: 2.5px solid var(--outline);
+  box-shadow: 3px 3px 0 var(--shadow);
+  color: hsl(var(--button-text));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin: 0 auto 0.85rem auto;
+}
+
+.login-pre-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 4px 12px;
+  font-family: var(--font-brand, 'Fira Code', monospace);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: var(--radius-btn);
+  border: 2px solid var(--outline);
+  background: hsl(var(--button));
+  color: var(--button-text);
+  box-shadow: 2px 2px 0 var(--shadow);
+  margin-bottom: 8px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  transition: transform var(--adm-transition-fast), box-shadow var(--adm-transition-fast), background var(--adm-transition-fast);
+}
+
+.login-pre-badge:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--shadow);
+  background: hsl(var(--button-hover));
+}
+
+.login-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--adm-text-primary);
+  margin: 0.35rem 0;
+}
+
+.login-subtitle {
+  font-size: 0.82rem;
+  color: var(--adm-text-secondary);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.login-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.login-form label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--adm-text-primary);
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 0.85rem;
+  color: var(--adm-text-muted);
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+.input-with-icon input {
+  width: 100%;
+  background: hsl(var(--input-bg));
+  border: 2.5px solid var(--outline);
+  border-radius: var(--radius);
+  padding: 0.65rem 2.5rem 0.65rem 2.5rem;
+  color: var(--adm-text-primary);
+  font-size: 0.88rem;
+  font-weight: 500;
+  box-shadow: 3px 3px 0 var(--shadow);
+  outline: none;
+  transition: transform var(--adm-transition-fast), box-shadow var(--adm-transition-fast);
+}
+
+.input-with-icon input:focus {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--shadow);
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 0.75rem;
+  background: transparent;
+  border: none;
+  color: var(--adm-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.password-toggle-btn:hover {
+  color: var(--adm-text-primary);
+}
+
+.btn-login-submit {
+  width: 100%;
+  padding: 0.75rem;
+  background: hsl(var(--button));
+  color: hsl(var(--button-text));
+  border: 2.5px solid var(--outline);
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.65rem;
+  box-shadow: 4px 4px 0 var(--shadow);
+  transition: transform var(--adm-transition-fast), box-shadow var(--adm-transition-fast), background var(--adm-transition-fast);
+}
+
+.btn-login-submit:hover:not(:disabled) {
+  background: hsl(var(--button-hover));
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--shadow);
+}
+
+.btn-login-submit:active:not(:disabled) {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--shadow);
+}
+
+.btn-login-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-error-banner {
+  padding: 0.75rem 1rem;
+  background: #fee2e2;
+  border: 2.5px solid var(--outline);
+  box-shadow: 3px 3px 0 var(--shadow);
+  border-radius: var(--radius);
+  color: #991b1b;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+html.dark .login-error-banner {
+  background: #450a0a;
+  color: #fca5a5;
+}
+
+.login-footer {
+  margin-top: 1.75rem;
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--adm-text-muted);
+  font-family: var(--font-brand, 'Fira Code', monospace);
+  font-weight: 600;
+  border-top: 2px solid var(--outline);
+  padding-top: 1rem;
+}
+
+/* ── Profile Spec Rows ── */
+.profile-spec-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.84rem;
+  padding: 0.65rem 0;
+  border-bottom: 2px solid var(--outline);
+  gap: 0.5rem;
+}
+
+.profile-spec-row:last-child {
+  border-bottom: none;
+}
+
+.profile-spec-label {
+  color: var(--adm-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  font-weight: 600;
+}
+
+.profile-spec-val {
+  color: var(--adm-text-primary);
+  text-align: right;
+  word-break: break-word;
+  font-weight: 700;
+}
+
+.profile-spec-val.mono {
+  font-family: var(--font-brand, 'Fira Code', monospace);
+}
+
+.profile-spec-val.sub {
+  color: var(--adm-text-secondary);
+  font-size: 0.75rem;
+}

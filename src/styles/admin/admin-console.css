@@ -1,0 +1,88 @@
+/* ==========================================================================
+   Lavender Neo-Brutalism Admin Console
+   ========================================================================== */
+
+/* ── API Console Editor UX ── */
+.api-console-tabs-bar {
+  display: flex;
+  align-items: center;
+  border-bottom: 2.5px solid var(--outline);
+  background: hsl(var(--panel-muted));
+  padding: 0 0.5rem;
+}
+
+.api-console-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.15rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-family: var(--font-brand, 'Fira Code', monospace);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--adm-text-secondary);
+  transition: all var(--adm-transition-fast);
+}
+
+.api-console-tab-btn:hover {
+  color: var(--adm-text-primary);
+  background: hsl(var(--panel));
+}
+
+.api-console-tab-btn.active {
+  color: hsl(var(--button-text));
+  background: hsl(var(--button));
+  border-bottom-color: var(--outline);
+  font-weight: 800;
+}
+
+.method-tag {
+  font-weight: 800;
+  color: hsl(var(--link));
+}
+
+.api-console-tab-btn.active .method-tag {
+  color: hsl(var(--button-text));
+}
+
+.api-console-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 2.5px solid var(--outline);
+  background: hsl(var(--panel-muted));
+}
+
+.json-editor-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background: hsl(var(--input-bg));
+  color: hsl(var(--foreground));
+  font-family: var(--font-brand, 'Fira Code', monospace);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  padding: 1.25rem;
+  border: none;
+  outline: none;
+  resize: vertical;
+  min-height: 380px;
+}
+
+/* ── API Console Toolbar & Tabs ── */
+.api-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.api-editor-wrapper {
+  max-width: 100%;
+  overflow-x: hidden;
+  border: 3px solid var(--outline);
+  box-shadow: 4px 4px 0 var(--shadow);
+  border-radius: var(--radius);
+}
