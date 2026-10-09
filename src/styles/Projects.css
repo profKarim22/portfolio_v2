@@ -314,4 +314,18 @@
     grid-template-columns: 1fr;
     gap: 20px;
   }
+
+  .project-body-content {
+    padding: 12px 14px 14px;
+  }
+}
+
+@media (max-width: 374px) {
+  .project-body-content {
+    padding: 10px 12px 12px;
+  }
+
+  .project-headline {
+    font-size: 14px;
+  }
 }

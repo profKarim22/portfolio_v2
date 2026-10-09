@@ -152,4 +152,27 @@
     grid-template-columns: 1fr;
     gap: 20px;
   }
+
+  .section-header {
+    margin-bottom: 28px;
+  }
+
+  .about-neo-card {
+    padding: 18px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 374px) {
+  .about-neo-card {
+    padding: 14px;
+  }
+
+  .about-main-name {
+    font-size: 17px;
+  }
+
+  .about-card-desc {
+    font-size: 12.5px;
+  }
 }

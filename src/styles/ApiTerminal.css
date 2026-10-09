@@ -257,3 +257,56 @@
     flex: 1 1 calc(50% - 8px);
   }
 }
+
+@media (max-width: 640px) {
+  .console-header {
+    padding: 10px 14px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .curl-bar {
+    padding: 8px 14px;
+    font-size: 11px;
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+
+  .console-body {
+    padding: 14px;
+    max-height: 300px;
+  }
+
+  .json-pre {
+    font-size: 11px;
+    word-break: break-word;
+  }
+
+  .host-label {
+    font-size: 11px;
+  }
+
+  .api-route-btn {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+
+  .api-sidebar {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 374px) {
+  .curl-bar {
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+
+  .json-pre {
+    font-size: 10px;
+  }
+
+  .console-body {
+    padding: 10px;
+  }
+}

@@ -35,6 +35,7 @@
   padding: 48px 0;
   max-width: 620px;
   width: 100%;
+  min-width: 0;
   justify-self: end;
 }
 
@@ -86,20 +87,24 @@
 /* ── Highlights Grid ── */
 .hero-highlights-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
   margin: 4px 0;
+  width: 100%;
+  max-width: 100%;
 }
 
 .highlight-neo-card {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 14px;
+  gap: 10px;
+  padding: 11px 12px;
   border-radius: var(--radius-btn);
   border: 2px solid var(--outline);
   box-shadow: 4px 4px 0 var(--shadow);
   transition: transform var(--duration-btn) var(--ease-out);
+  min-width: 0;
+  overflow: hidden;
 }
 
 .highlight-neo-card:hover {
@@ -107,8 +112,8 @@
 }
 
 .highlight-icon-box {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: 6px;
   border: 2px solid var(--outline);
   background: hsl(var(--button));
@@ -116,7 +121,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 17px;
+  font-size: 16px;
   flex-shrink: 0;
 }
 
@@ -124,10 +129,11 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
+  overflow: hidden;
 }
 
 .highlight-tag {
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 800;
   letter-spacing: 0.08em;
   color: hsl(var(--soft-text));
@@ -135,12 +141,12 @@
 }
 
 .highlight-title {
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 700;
   color: hsl(var(--foreground));
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.25;
+  white-space: normal;
+  word-break: break-word;
 }
 
 /* ── Neo-Brutalist Terminal Console ── */
@@ -151,6 +157,7 @@
   overflow: hidden;
   background: linear-gradient(165deg, hsl(var(--panel)) 0%, hsl(var(--panel-muted)) 100%);
   margin-top: 4px;
+  width: 100%;
 }
 
 .terminal-topbar {
@@ -369,33 +376,268 @@
 
   .hero-badge-col {
     height: 540px;
+    min-height: auto;
     width: 100%;
     margin-left: 0;
     transform: none;
   }
 }
 
-@media (max-width: 640px) {
+/* ── Tablet / Small Laptop ── */
+@media (max-width: 768px) {
   .hero-section {
-    padding: 28px 0 40px;
+    padding: 16px 0 32px;
+    overflow-x: hidden;
   }
 
+  .hero-name {
+    font-size: clamp(32px, 8vw, 42px);
+  }
+
+  .hero-role-eyebrow {
+    font-size: 16px;
+  }
+
+  .hero-lead {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .hero-content-col {
+    gap: 16px;
+    padding: 16px 0 0;
+  }
+
+  /* Segmented nav pills: allow wrapping and reduce gap */
+  .segmented-nav.hero-nav-pills {
+    gap: 8px;
+  }
+
+  .segmented-nav-btn {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+  /* Highlights: 1-column on narrower tablets */
   .hero-highlights-grid {
     grid-template-columns: 1fr;
     gap: 10px;
   }
 
+  /* Terminal panel: prevent horizontal overflow */
+  .terminal-json-output {
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .curl-command-line {
+    font-size: 11px;
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+
+  .terminal-code-body {
+    font-size: 11.5px;
+    padding: 12px 14px;
+    max-height: 200px;
+  }
+
+  /* Action buttons: stack vertically */
   .hero-actions-row {
     flex-direction: column;
     width: 100%;
+    gap: 10px;
   }
 
   .hero-actions-row a {
     width: 100%;
     text-align: center;
+    justify-content: center;
+  }
+
+  /* Badge column: contain within viewport */
+  .hero-badge-col {
+    height: 460px;
+    min-height: auto;
+    overflow: hidden;
+  }
+}
+
+/* ── Mobile (standard phone widths 375-430px) ── */
+@media (max-width: 640px) {
+  .hero-section {
+    padding: 12px 0 28px;
+    overflow-x: hidden;
+  }
+
+  .container.hero-container,
+  .hero-container {
+    gap: 24px;
+  }
+
+  .hero-content-col {
+    gap: 14px;
+    padding: 12px 0 0;
+  }
+
+  .hero-name {
+    font-size: clamp(28px, 8.5vw, 36px);
+  }
+
+  .hero-role-eyebrow {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .hero-lead {
+    font-size: 14px;
+    line-height: 1.55;
+    max-width: 100%;
+  }
+
+  .hero-heading-group {
+    gap: 4px;
+  }
+
+  /* Segmented pills: tighter mobile fit */
+  .segmented-nav.hero-nav-pills {
+    gap: 6px;
+    width: 100%;
+  }
+
+  .segmented-nav-btn {
+    padding: 4px 8px;
+    font-size: 10.5px;
+  }
+
+  .hero-nav-pills {
+    margin-bottom: 2px;
+  }
+
+  /* Highlight cards: single column, reduced padding */
+  .hero-highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .highlight-neo-card {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .highlight-icon-box {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+  }
+
+  .highlight-tag {
+    font-size: 10px;
+  }
+
+  .highlight-title {
+    font-size: 12px;
+  }
+
+  /* Terminal panel: fully contained, no overflow */
+  .neo-terminal-panel {
+    margin-top: 2px;
+  }
+
+  .terminal-topbar {
+    padding: 8px 12px;
+  }
+
+  .terminal-title-text {
+    font-size: 11px;
+  }
+
+  .terminal-copy-neo-btn {
+    padding: 3px 8px;
+    font-size: 10px;
+  }
+
+  .terminal-code-body {
+    padding: 10px 12px;
+    font-size: 11px;
+    max-height: 180px;
+  }
+
+  .terminal-json-output {
+    font-size: 10.5px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .curl-command-line {
+    font-size: 10.5px;
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+
+  /* Action row */
+  .hero-actions-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .hero-actions-row a {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    min-height: 40px;
+    font-size: 13px;
+  }
+
+  /* Badge / 3D card area */
+  .hero-badge-col {
+    height: 420px;
+    min-height: auto;
+    overflow: hidden;
+  }
+
+  .lanyard-navbar-mount {
+    display: none;
+  }
+}
+
+/* ── Small Mobile (320-374px) ── */
+@media (max-width: 374px) {
+  .hero-name {
+    font-size: 26px;
+  }
+
+  .hero-role-eyebrow {
+    font-size: 13px;
+  }
+
+  .hero-lead {
+    font-size: 13px;
+  }
+
+  .segmented-nav-btn {
+    padding: 3px 6px;
+    font-size: 9.5px;
+  }
+
+  .highlight-neo-card {
+    padding: 8px 10px;
+  }
+
+  .terminal-code-body {
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+
+  .terminal-json-output {
+    font-size: 10px;
   }
 
   .hero-badge-col {
-    height: 480px;
+    height: 380px;
   }
 }

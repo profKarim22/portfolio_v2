@@ -445,6 +445,16 @@ h3, .h3 {
 }
 
 /* ── Responsive Mobile Refinements ── */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .section {
+    padding: 44px 0;
+  }
+}
+
 @media (max-width: 640px) {
   :root {
     --shadow-panel: 5px 5px 0 var(--shadow);
@@ -458,7 +468,74 @@ h3, .h3 {
   }
 
   .section {
-    padding: 40px 0;
+    padding: 36px 0;
+  }
+
+  /* Buttons: slightly tighter on mobile */
+  .neo-button,
+  .btn-primary,
+  .muted-button,
+  .btn-secondary,
+  .neo-button-muted {
+    min-height: 40px;
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+
+  /* Segmented nav: tighter on mobile */
+  .segmented-nav {
+    gap: 6px;
+  }
+
+  .segmented-nav-btn {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+
+  /* Typography scale mobile overrides */
+  h1, .h1 {
+    font-size: clamp(26px, 7vw, 36px);
+  }
+
+  h2, .h2 {
+    font-size: clamp(20px, 5vw, 28px);
+  }
+
+  .lead-p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .eyebrow-text {
+    font-size: 10px;
+    padding: 3px 10px;
+  }
+
+  /* Prevent horizontal overflow on all major containers */
+  .app-layout,
+  .app,
+  .main-content {
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 374px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  .neo-button,
+  .btn-primary,
+  .muted-button,
+  .btn-secondary,
+  .neo-button-muted {
+    min-height: 38px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  h1, .h1 {
+    font-size: clamp(22px, 7vw, 30px);
   }
 }
 

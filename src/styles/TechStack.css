@@ -252,3 +252,39 @@
     padding: 1.6rem 1.4rem;
   }
 }
+
+@media (max-width: 640px) {
+  .techstack-section {
+    padding: 3rem 1rem;
+  }
+
+  .techstack-main-title {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+  }
+
+  .techstack-lead-desc {
+    font-size: 0.92rem;
+  }
+
+  .techstack-container {
+    gap: 2.5rem;
+  }
+
+  .techstack-card {
+    padding: 1.4rem 1.2rem;
+  }
+
+  .cluster-title {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 374px) {
+  .techstack-section {
+    padding: 2.5rem 0.75rem;
+  }
+
+  .techstack-card {
+    padding: 1.2rem 1rem;
+  }
+}
